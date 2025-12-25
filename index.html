@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Malla Curricular Nutrición y Dietética</title>
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="estilos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Contenedor principal de la página -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Malla Curricular - Nutrición y Dietética</h1>
+            <p>Haz clic en los ramos para marcarlos como aprobados. Los requisitos se validan automáticamente.</p>
+        </div>
+        <div class="header-actions">
+            <button id="resetBtn" class="btn-reset" type="button">
+                Reiniciar progreso
+            </button>
+        </div>
+    </header>
+
+    <!-- Contenedor para mensajes (errores, avisos de requisitos, etc.) -->
+    <section id="mensajeRequisitos" class="mensaje-requisitos oculto">
+        <span id="mensajeTexto"></span>
+        <button id="cerrarMensaje" class="cerrar-mensaje" type="button">✕</button>
+    </section>
+
+    <!-- Contenedor de la malla curricular -->
+    <main class="contenedor-malla">
+        <!-- Cada columna será un semestre -->
+        <div class="semestre">
+            <h2>Semestre 1</h2>
+            <div class="ramo" data-ramo="Morfología">Morfología</div>
+            <div class="ramo" data-ramo="Química básica">Química básica</div>
+            <div class="ramo" data-ramo="Laboratorio química básica">Laboratorio química básica</div>
+            <div class="ramo" data-ramo="Introducción a la Nutrición y a la Dietética">
+                Introducción a la Nutrición y a la Dietética
+            </div>
+            <div class="ramo" data-ramo="Optativa">Optativa</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 2</h2>
+            <div class="ramo" data-ramo="Bioquímica I">Bioquímica I</div>
+            <div class="ramo" data-ramo="Ciencia de alimentos I">Ciencia de alimentos I</div>
+            <div class="ramo" data-ramo="Laboratorio de Ciencia de alimentos I">
+                Laboratorio de Ciencia de alimentos I
+            </div>
+            <div class="ramo" data-ramo="Bioestadística Fundamental">Bioestadística Fundamental</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 3</h2>
+            <div class="ramo" data-ramo="Bases Fisiológicas de la Nutrición">
+                Bases Fisiológicas de la Nutrición
+            </div>
+            <div class="ramo" data-ramo="Evaluación del Estado Nutricional">
+                Evaluación del Estado Nutricional
+            </div>
+            <div class="ramo" data-ramo="Ciencia de alimentos II">Ciencia de alimentos II</div>
+            <div class="ramo" data-ramo="Laboratorio de Ciencia de alimentos II">
+                Laboratorio de Ciencia de alimentos II
+            </div>
+            <div class="ramo" data-ramo="Fundamentos de Administración">
+                Fundamentos de Administración
+            </div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 4</h2>
+            <div class="ramo" data-ramo="Nutrición materno infantil">Nutrición materno infantil</div>
+            <div class="ramo" data-ramo="Microbiología">Microbiología</div>
+            <div class="ramo" data-ramo="Laboratorio Microbiología">Laboratorio Microbiología</div>
+            <div class="ramo" data-ramo="Antropología Alimentaria">Antropología Alimentaria</div>
+            <div class="ramo" data-ramo="Fisiología General">Fisiología General</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 5</h2>
+            <div class="ramo" data-ramo="Fisiopatología">Fisiopatología</div>
+            <div class="ramo" data-ramo="Nutrición del adulto">Nutrición del adulto</div>
+            <div class="ramo" data-ramo="Sistema agroalimentario">Sistema agroalimentario</div>
+            <div class="ramo" data-ramo="Epidemiología Nutricional I">
+                Epidemiología Nutricional I
+            </div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 6</h2>
+            <div class="ramo" data-ramo="Nutrición Clínica materno infantil">
+                Nutrición Clínica materno infantil
+            </div>
+            <div class="ramo" data-ramo="Gerencia de servicios de alimentación y Nutrición">
+                Gerencia de servicios de alimentación y Nutrición
+            </div>
+            <div class="ramo" data-ramo="Nutrición Clínica adultos">Nutrición Clínica adultos</div>
+            <div class="ramo" data-ramo="Nutrición pública">Nutrición pública</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 7</h2>
+            <div class="ramo" data-ramo="Práctica Nutrición Clínica materno infantil">
+                Práctica Nutrición Clínica materno infantil
+            </div>
+            <div class="ramo" data-ramo="Práctica de servicios de alimentación y Nutrición">
+                Práctica de servicios de alimentación y Nutrición
+            </div>
+            <div class="ramo" data-ramo="Educación alimentaria y nutricional">
+                Educación alimentaria y nutricional
+            </div>
+            <div class="ramo" data-ramo="Fundamentos de investigación">
+                Fundamentos de investigación
+            </div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 8</h2>
+            <div class="ramo" data-ramo="Práctica de Nutrición Clínica adultos">
+                Práctica de Nutrición Clínica adultos
+            </div>
+            <div class="ramo" data-ramo="Práctica de Nutrición pública">
+                Práctica de Nutrición pública
+            </div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 9</h2>
+            <div class="ramo" data-ramo="Disciplinar Optativa">Disciplinar Optativa</div>
+            <div class="ramo" data-ramo="Trabajo de grado">Trabajo de grado</div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Malla interactiva creada para seguimiento personal de progresión académica.</p>
+    </footer>
+
+    <!-- Archivo de JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
 
