@@ -1,1 +1,306 @@
+/* ============================
+   ESTILOS GENERALES
+   Paleta: morados y lilas, estilo moderno y minimalista
+   ============================ */
+
+:root {
+    /* Colores base */
+    --color-fondo: #0f0b1a;
+    --color-fondo-card: #1a122b;
+    --color-acento: #a855f7;
+    --color-acento-suave: #c4a5ff;
+    --color-texto: #f9f5ff;
+    --color-texto-suave: #d3c9f5;
+    --color-borde: #3a2f55;
+    --color-aprobado: #4ade80; /* Verde suave pero que combine */
+    --color-aprobado-fondo: rgba(74, 222, 128, 0.12);
+    --color-bloqueado: #fb7185;
+    --color-mensaje-fondo: #2b1535;
+    --shadow-suave: 0 18px 45px rgba(0, 0, 0, 0.45);
+    --radius-card: 18px;
+
+    /* Tipografía */
+    --font-body: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    background: radial-gradient(circle at top, #2d1b4a 0, #0f0b1a 45%, #05030b 100%);
+    color: var(--color-texto);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    padding: 16px;
+}
+
+/* ============================
+   CABECERA
+   ============================ */
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.header-content h1 {
+    font-size: 1.7rem;
+    letter-spacing: 0.03em;
+}
+
+.header-content p {
+    font-size: 0.95rem;
+    color: var(--color-texto-suave);
+    margin-top: 4px;
+}
+
+/* Botón de reinicio */
+.btn-reset {
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--color-borde);
+    background: linear-gradient(135deg, #2c1639, #1a1027);
+    color: var(--color-acento-suave);
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.18s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.btn-reset:hover {
+    border-color: var(--color-acento);
+    color: var(--color-texto);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+}
+
+.btn-reset:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================
+   MENSAJE DE REQUISITOS
+   ============================ */
+
+.mensaje-requisitos {
+    position: relative;
+    background: var(--color-mensaje-fondo);
+    border-radius: 14px;
+    border: 1px solid rgba(252, 165, 165, 0.4);
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    color: var(--color-texto);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.45);
+}
+
+.mensaje-requisitos.oculto {
+    display: none;
+}
+
+.mensaje-requisitos::before {
+    content: "⚠︎";
+    color: var(--color-bloqueado);
+    margin-top: 2px;
+}
+
+.cerrar-mensaje {
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    color: var(--color-texto-suave);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0 2px;
+}
+
+/* ============================
+   CONTENEDOR DE LA MALLA
+   ============================ */
+
+.contenedor-malla {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    align-items: flex-start;
+}
+
+/* ============================
+   TARJETAS DE CADA SEMESTRE
+   ============================ */
+
+.semestre {
+    background: radial-gradient(circle at top, #2a1946 0, #130b23 45%, #0b0715 100%);
+    border-radius: var(--radius-card);
+    padding: 12px 12px 14px;
+    border: 1px solid var(--color-borde);
+    box-shadow: var(--shadow-suave);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    backdrop-filter: blur(12px);
+}
+
+.semestre h2 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+    color: var(--color-acento-suave);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.semestre h2::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 18px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, var(--color-acento), transparent);
+}
+
+/* ============================
+   RAMOS (CURSOS)
+   ============================ */
+
+.ramo {
+    background: rgba(10, 6, 22, 0.85);
+    border-radius: 10px;
+    padding: 8px 9px;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--color-texto);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.16s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Indicador lateral sutil */
+.ramo::before {
+    content: "";
+    width: 3px;
+    height: 70%;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(168, 85, 247, 0.9), transparent);
+    margin-right: 4px;
+}
+
+/* Efecto hover solo si no está aprobado */
+.ramo:hover {
+    border-color: var(--color-acento);
+    background: rgba(27, 16, 45, 0.95);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5);
+}
+
+/* Estado aprobado */
+.ramo.aprobado {
+    background: var(--color-aprobado-fondo);
+    border-color: var(--color-aprobado);
+    color: var(--color-texto);
+    text-decoration: line-through;
+    text-decoration-thickness: 1.5px;
+    text-decoration-color: rgba(15, 23, 42, 0.7);
+}
+
+.ramo.aprobado::before {
+    background: linear-gradient(180deg, var(--color-aprobado), transparent);
+}
+
+/* Pequeño icono de check visual cuando está aprobado */
+.ramo.aprobado::after {
+    content: "✓";
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: var(--color-aprobado);
+}
+
+/* Estado bloqueado para feedback (opcional: solo color de borde) */
+.ramo.bloqueado-temporal {
+    animation: bloquear 0.25s ease-in-out;
+    border-color: var(--color-bloqueado);
+}
+
+@keyframes bloquear {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-1px); }
+    100% { transform: translateX(0); }
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+
+.footer {
+    margin-top: 18px;
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--color-texto-suave);
+    opacity: 0.9;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+    }
+
+    .header-content h1 {
+        font-size: 1.4rem;
+    }
+
+    .semestre {
+        padding: 10px 10px 12px;
+    }
+
+    .ramo {
+        font-size: 0.88rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-actions {
+        width: 100%;
+    }
+
+    .btn-reset {
+        width: 100%;
+        justify-content: center;
+    }
+}
 
